@@ -9,21 +9,24 @@ public:
     explicit RoboWidget(QWidget *parent = nullptr);
     ~RoboWidget() override = default;
 
-    void set_robo_position(QPointF pos);
-    void set_robo_tilt(int tilt_x, int tilt_y);
 protected:
     void paintEvent(QPaintEvent *event) override;
     void keyPressEvent(QKeyEvent *event) override;
+	void resizeEvent(QResizeEvent *event) override;
 private:
-    QPixmap m_pipe_image {};
-    QPixmap m_robo_image {};
-    QPointF m_pipe_pos {};
-    QPointF m_robo_pos; // позиция робота
-    qreal m_robo_angle; // угол робота
-    qreal m_robo_tiltX; // наклон робота по оси Х
-    qreal m_robo_tiltY; // наклон робота по оси У
-    qreal m_pipe_radius;
-    QPointF m_pipe_center;
+    QImage m_pipe_image {};
+    QImage m_robo_image {};
+
+	QPointF m_robo_pos;
+	QPointF m_pipe_pos;
+
+	qreal m_robo_tilt_angle;
+	qreal m_pipe_radius;
+	qreal m_robo_speed;
+	qreal m_robo_radius;
+	qreal m_move_direction;
+
+	void update_robot_position();
 };
 
 
