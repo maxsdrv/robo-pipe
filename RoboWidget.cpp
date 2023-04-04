@@ -68,30 +68,14 @@ void RoboWidget::resizeEvent(QResizeEvent *event) {
 	QPointF center(width() / 2.0, height() / 2.0);
 	m_robo_pos = center - QPointF(m_robo_image.width() / 2.0, m_robo_image.height() / 2.0);
 	m_pipe_pos = center - QPointF(m_pipe_image.width() / 2.0, m_pipe_image.height() / 2.0);
-
 	m_robo_image = m_robo_image.scaledToWidth(width() * 0.2, Qt::SmoothTransformation);
 	m_pipe_image = m_pipe_image.scaledToWidth(width() * 0.6, Qt::SmoothTransformation);
-
 }
 void RoboWidget::update_robot_position() {
 	QPointF new_pos = m_robo_pos + QPointF(m_robo_speed * m_move_direction, 0);
-
 	// Calculate the distance between the robot and the pipe
 	qreal dist = QLineF(new_pos, m_pipe_pos).length();
-
 	m_robo_pos = new_pos;
-//	if (dist > m_pipe_radius - m_robo_radius) {
-//		// If the robot would move outside the pipe, adjust its position and tilt angle
-//		qreal angle = qRadiansToDegrees(qAtan2(new_pos.y() - m_pipe_pos.y(), new_pos.x() - m_pipe_pos.x()));
-//		qreal x = m_pipe_pos.x() + (m_pipe_radius - m_robo_radius) * qCos(qDegreesToRadians(angle));
-//		qreal y = m_pipe_pos.y() + (m_pipe_radius - m_robo_radius) * qSin(qDegreesToRadians(angle));
-//		m_robo_pos = QPointF(x, y);
-//		m_robo_tilt_angle = angle + 90;
-//	}
-//	else {
-//		m_robo_pos = new_pos;
-//		m_robo_tilt_angle = 0;
-//	}
 	update();
 }
 
