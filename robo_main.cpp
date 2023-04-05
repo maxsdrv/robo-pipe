@@ -2,6 +2,7 @@
 
 #include "RoboWidget.h"
 #include "Projectile.h"
+#include "RoboMoveScene.h"
 
 
 int main(int argc, char** argv) {
@@ -12,14 +13,14 @@ int main(int argc, char** argv) {
     window.setWindowTitle("Robo Widget");
 
     //Create the robot widget
-    RoboWidget robo(&window);
-    robo.setFocusPolicy(Qt::StrongFocus);
+//    RoboWidget robo(&window);
+//    robo.setFocusPolicy(Qt::StrongFocus);
 
     //Add the robot widget to the main window's central widget
-    auto central_widget = new QWidget(&window);
-    auto layout = new QVBoxLayout(central_widget);
-    layout->addWidget(&robo);
-    window.setCentralWidget(central_widget);
+//    auto central_widget = new QWidget(&window);
+//    auto layout = new QVBoxLayout(central_widget);
+//    layout->addWidget(&robo);
+//    window.setCentralWidget(central_widget);
 
     /*QGraphicsScene scene(-50, -50, -100, 100);
 
@@ -34,7 +35,15 @@ int main(int argc, char** argv) {
     timer.start(10);*/
 
 
-    window.show();
+//    window.show();
+
+	roboscene::RoboWidget widget(&window);
+	auto central_widget = new QWidget(&window);
+	auto layout = new QVBoxLayout(central_widget);
+	layout->addWidget(&widget);
+	window.setCentralWidget(central_widget);
+
+	window.show();
 
     return QApplication::exec();
 }
