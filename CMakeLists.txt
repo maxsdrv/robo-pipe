@@ -10,10 +10,9 @@ find_package(Qt5Core REQUIRED)
 find_package(Qt5Widgets REQUIRED)
 
 set(PROJECT_SOURCES
-        RoboWidget.cpp
-        RoboWidget.h
-        robo_main.cpp Projectile.h
-        RoboMoveScene.cpp RoboMoveScene.h)
+        robo_main.cpp
+        RoboMoveScene.cpp
+        RoboMoveScene.h)
 
 set(IMAGES_DIR ${CMAKE_CURRENT_SOURCE_DIR}/Widget_test/Widget_test)
 set(IMAGES_DEST ${CMAKE_CURRENT_BINARY_DIR}/images)
