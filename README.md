@@ -4,13 +4,13 @@
 
 RoboPipe is a Qt-based application that simulates a robot moving inside a circular pipe. The application consists of three classes: Pipe, Robot, and RoboWidget.
 
-# Pipe Class
+### Pipe Class
 The Pipe class represents the circular pipe in which the robot moves. It inherits from the QGraphicsPixmapItem class, and has a constructor that takes a QGraphicsItem parent object. It also has a rotate_pipe() method that takes an angle as input and rotates the pipe accordingly. Additionally, the is_out_of_bounds() method takes a QPointF position and checks if the robot is outside of the pipe bounds.
 
-# Robot Class
+### Robot Class
 The Robot class represents the robot in the application. It also inherits from the QGraphicsPixmapItem class, and has a constructor that takes a QGraphicsItem parent object. The move_robot() method takes a new position and moves the robot to that position. The rotate_robot() method takes an angle and rotates the robot accordingly.
 
-# RoboWidget Class
+### RoboWidget Class
 The RoboWidget class represents the widget in which the simulation takes place. It inherits from the QGraphicsView class, and has a constructor that takes a QWidget parent object. The class has a QGraphicsScene object, a Pipe object, and a Robot object. It also has a keyPressEvent() method that handles key press events.
 
 # Installation
@@ -57,4 +57,4 @@ Build the project: cmake --build .
 This project was created by [HorMad]. If you would like to contribute to the project, please submit a pull request.
 
 # Acknowledgments
-This project was inspired by the need for a simple, yet powerful tool for visualizing and analyzing sensor data. Thanks to the Qt framework for providing a flexible and versatile platform for building graphical user interfaces.
+This project was inspired by Maxim the need for a simple, yet powerful tool for visualizing and analyzing sensor data. Thanks to the Qt framework for providing a flexible and versatile platform for building graphical user interfaces.
